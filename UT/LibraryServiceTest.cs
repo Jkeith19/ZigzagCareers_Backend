@@ -116,7 +116,7 @@ namespace UT
 
             // Assert
             Assert.IsNotNull(result);
-            Assert.AreEqual("New Title", result.Title);
+            Assert.That(result.Title, Is.EqualTo("New Title"));
         }
 
         [Test]
@@ -157,7 +157,7 @@ namespace UT
             Assert.IsTrue(result);
             var addedBook = await _context.Books.FirstOrDefaultAsync(b => b.Isbn == "123456789");
             Assert.IsNotNull(addedBook);
-            Assert.AreEqual("New Book", addedBook.Title);
+            Assert.That(addedBook.Title, Is.EqualTo("New Book"));
         }
 
         [Test]
