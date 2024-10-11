@@ -1,0 +1,30 @@
+﻿@model IdentityServer.Models.LoginViewModel
+
+@{
+    ViewData["Title"] = "Login";
+}
+<div class="text-center">
+    <h2>This is a Microservice for Library Application</h2>
+    <form class="main form-signin" asp-controller="Account" asp-action="Login" method="post" asp-route-returnUrl="@ViewData["ReturnUrl"]">
+        <input type="hidden" asp-for="ReturnUrl"/>
+        <div asp-validation-summary="All" class="text-danger"></div>
+
+        <div>
+            <label asp-for="Username">Username</label>
+            <input asp-for="Username" type="email" placeholder="Username" class="form-control"/>
+        </div>
+
+        <div>
+            <label asp-for="Password">Password</label>
+            <input asp-for="Password" type="password" placeholder="Password" class="form-control"/>
+        </div>
+
+        <div>
+            <button type="submit" class="btn btn-primary">Sign in</button>
+        </div>
+    </form>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
