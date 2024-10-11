@@ -1,14 +1,20 @@
+using Data.Dto.Mapper;
 using Data.Entity.Context;
 using Microsoft.EntityFrameworkCore;
+using Services.Library;
 
 var builder = WebApplication.CreateBuilder(args);
+
+// Add services to the container.
+builder.Services.AddControllers();
 
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
-// Add services to the container.
+//Configure Scoped Services
+builder.Services.AddScoped<IBookMapper, BookMapper>();
+builder.Services.AddScoped<ILibraryService, LibraryService>();
 
-builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
