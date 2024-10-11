@@ -37,7 +37,7 @@ builder.Services.AddSwaggerGen(options =>
         {
             ClientCredentials = new OpenApiOAuthFlow
             {
-                TokenUrl = new Uri("https://localhost:7115/connect/token"),
+                TokenUrl = new Uri("https://localhost:7116/connect/token"),
                 Scopes = new Dictionary<string, string>
                 {
                     ["LibraryAPI.read"] = "Read access to Library API"
@@ -57,7 +57,7 @@ builder.Services.AddAuthentication(options =>
 })
 .AddJwtBearer(options =>
 {
-    options.Authority = "https://localhost:7115";
+    options.Authority = "https://localhost:7116";
     options.Audience = "LibraryAPI";
     options.RequireHttpsMetadata = false;
 
@@ -67,7 +67,7 @@ builder.Services.AddAuthentication(options =>
         ValidateAudience = true,
         ValidateLifetime = true,
         ValidateIssuerSigningKey = true,
-        ValidIssuer = "https://localhost:7115",
+        ValidIssuer = "https://localhost:7116",
         ValidAudience = "LibraryAPI",
         IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("@1q2w3e4r!!"))
     };
