@@ -1,4 +1,5 @@
 ﻿using Data.Dto.Model;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Services.Library;
 using System.ComponentModel.DataAnnotations;
@@ -9,6 +10,7 @@ using System.Net;
 namespace API.Controllers
 {
     [ApiController]
+    [Authorize]
     public class LibraryAPIController : ControllerBase
     {
         private readonly ILibraryService _libraryService;
