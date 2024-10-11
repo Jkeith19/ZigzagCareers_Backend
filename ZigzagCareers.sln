@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Services", "Services\Servic
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UT", "UT\UT.csproj", "{6E5EB4AC-AD6E-4416-B201-5B568F133255}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Microservice", "Microservice\Microservice.csproj", "{58B6E6B2-881A-4338-9C3A-B43D624968B7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{6E5EB4AC-AD6E-4416-B201-5B568F133255}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6E5EB4AC-AD6E-4416-B201-5B568F133255}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6E5EB4AC-AD6E-4416-B201-5B568F133255}.Release|Any CPU.Build.0 = Release|Any CPU
+		{58B6E6B2-881A-4338-9C3A-B43D624968B7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{58B6E6B2-881A-4338-9C3A-B43D624968B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{58B6E6B2-881A-4338-9C3A-B43D624968B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{58B6E6B2-881A-4338-9C3A-B43D624968B7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
