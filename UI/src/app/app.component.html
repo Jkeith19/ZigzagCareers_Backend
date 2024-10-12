@@ -1,0 +1,60 @@
+<div class="flex h-screen">
+  <div class="w-[50%]">
+    <form (ngSubmit)="onFormSubmit()" [formGroup]="booksForm">
+      <div class="mt-2">
+        <label for="title" class="font-bold">Book Title</label>
+        <input type="text" class="w-full p-2 border-2 rounded-sm mt-2" formControlName="title">
+      </div>
+      <div class="mt-2">
+        <label for="title" class="font-bold">Author</label>
+        <input type="text" class="w-full p-2 border-2 rounded-sm mt-2" formControlName="author">
+      </div>
+      <div class="mt-2">
+        <label for="title" class="font-bold">ISBN</label>
+        <input type="text" class="w-full p-2 border-2 rounded-sm mt-2" formControlName="isbn">
+      </div>
+      <div class="mt-2">
+        <label for="title" class="font-bold">Published Date</label>
+        <input type="date" class="w-full p-2 border-2 rounded-sm mt-2" formControlName="publishedDate ">
+      </div>
+      <div class="mt-2">
+        <button type="submit" class="bg-slate-800 text-white px-4 py-2 rounded-sm w-full">Add Book</button>
+      </div>
+    </form>
+  </div>
+  <div class="overflow-auto w-[50%]">
+    @if (books$ | async;as books)
+    {
+      @if (books.length > 0) {
+        <ul>
+          @for (item of books; track $index) {
+            <li class="p-2 bg-state-100 border-b-2 border-slate-200">
+              <span>
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 0 0 6 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 0 1 6 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 0 1 6-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0 0 18 18a8.967 8.967 0 0 0-6 2.292m0-14.25v14.25" />
+                </svg>
+              </span>
+              <span class="font-light text-3xl">{{item.title}}</span>
+              <div>
+                <span class="font-light">Author: </span>
+                <span class="font-light">{{item.author}}</span>
+              </div>
+              <div>
+                <span class="font-light">ISBN: </span>
+                <span class="font-light">{{item.isbn}}</span>
+              </div>
+              <div>
+                <span class="font-light">Published Date: </span>
+                <span class="font-light">{{item.publishedDate}}</span>
+              </div>
+            </li> 
+          }
+        </ul>
+      }
+      @else {
+        <p>No books found on registry!</p>
+      }
+    }
+  </div>
+</div>
+
